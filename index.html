@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZZ Restaurant - Login</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">ZZ Restaurant</div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="form-container">
+            <h2 class="form-title">Login</h2>
+            <div id="login-error" class="text-danger mb-3" style="display: none;"></div>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" class="form-control" required>
+                </div>
+                <button type="submit" class="btn btn-block">Login</button>
+            </form>
+            <div class="text-center mt-3">
+                <p>Don't have an account? <a href="#" id="register-link">Register</a></p>
+            </div>
+        </div>
+
+        <!-- Registration Form (Hidden by default) -->
+        <div class="form-container" id="registration-form" style="display: none;">
+            <h2 class="form-title">Register</h2>
+            <div id="register-error" class="text-danger mb-3" style="display: none;"></div>
+            <form id="register-form">
+                <div class="form-group">
+                    <label for="reg-name">Full Name</label>
+                    <input type="text" id="reg-name" name="name" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="reg-email">Email</label>
+                    <input type="email" id="reg-email" name="email" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="reg-phone">Phone Number</label>
+                    <input type="tel" id="reg-phone" name="phone" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="reg-password">Password</label>
+                    <input type="password" id="reg-password" name="password" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="reg-confirm-password">Confirm Password</label>
+                    <input type="password" id="reg-confirm-password" name="confirm_password" class="form-control" required>
+                </div>
+
+                <!-- New Role Selection -->
+                <div class="form-group">
+                    <label for="reg-role">Register as:</label>
+                    <select id="reg-role" name="role" class="form-control" required>
+                        <option value="customer" selected>Customer</option>
+                        <option value="staff">Staff</option>
+                        <option value="runner">Runner</option>
+                    </select>
+                </div>
+
+                <!-- New Platform Selection (for Runners, initially hidden) -->
+                <div class="form-group" id="platform-group" style="display: none;">
+                    <label for="reg-platform">Platform (for Runners):</label>
+                    <select id="reg-platform" name="platform" class="form-control">
+                        <option value="grab">Grab</option>
+                        <option value="foodpanda">Foodpanda</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn btn-block">Register</button>
+            </form>
+            <div class="text-center mt-3">
+                <p>Already have an account? <a href="#" id="login-link">Login</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/auth.js"></script>
+</body>
+</html>

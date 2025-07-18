@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZZ Restaurant - Customer Dashboard</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">ZZ Restaurant</div>
+            <div class="user-info">
+                <span id="user-name">Welcome, Customer</span>
+                <button id="logout-btn" class="btn">Logout</button>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#" class="active" id="menu-nav">Menu</a></li>
+            <li><a href="#" id="orders-nav">My Orders</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <!-- Menu Section -->
+        <div id="menu-section">
+            <div class="menu-container">
+                <div class="menu-sidebar">
+                    <h3>Categories</h3>
+                    <ul class="category-list">
+                        <li class="category-item active" data-category="all">All Items</li>
+                        <li class="category-item" data-category="SUP ZZ">SUP ZZ</li>
+                        <li class="category-item" data-category="MEE REBUS ZZ">MEE REBUS ZZ</li>
+                        <li class="category-item" data-category="SARAPAN">SARAPAN</li>
+                        <li class="category-item" data-category="ROTI CANAI">ROTI CANAI</li>
+                        <li class="category-item" data-category="LUNCH SETS">LUNCH SETS</li>
+                        <li class="category-item" data-category="THAI DISHES">THAI DISHES</li>
+                        <li class="category-item" data-category="WESTERN">WESTERN</li>
+                        <li class="category-item" data-category="DRINKS">DRINKS</li>
+                    </ul>
+                </div>
+                <div class="menu-content">
+                    <h2>Menu Items</h2>
+                    <div class="menu-items" id="menu-items-container">
+                        <!-- Menu items will be loaded here dynamically -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="cart-container">
+                <h3 class="cart-title">Your Cart</h3>
+                <div id="empty-cart-message">Your cart is empty. Add items from the menu.</div>
+                <div class="cart-items" id="cart-items-container">
+                    <!-- Cart items will be added here dynamically -->
+                </div>
+                <div class="cart-summary" id="cart-summary" style="display: none;">
+                    <div class="cart-total">
+                        <span>Subtotal:</span>
+                        <span id="cart-subtotal">RM 0.00</span>
+                    </div>
+                    <div class="cart-total">
+                        <span>Delivery Fee:</span>
+                        <span id="delivery-fee">RM 5.00</span>
+                    </div>
+                    <div class="cart-total">
+                        <span>Total:</span>
+                        <span id="cart-total">RM 0.00</span>
+                    </div>
+                    <button id="checkout-btn" class="btn btn-block">Proceed to Checkout</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Orders Section -->
+        <div id="orders-section" style="display: none;">
+            <h2>My Orders</h2>
+            <div class="order-list" id="order-list-container">
+                <!-- Orders will be loaded here dynamically -->
+            </div>
+        </div>
+
+        <!-- Checkout Modal -->
+        <div id="checkout-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Complete Your Order</h2>
+                <form id="checkout-form">
+                    <div class="form-group">
+                        <label for="delivery-address">Delivery Address</label>
+                        <textarea id="delivery-address" name="delivery_address" class="form-control" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Payment Method</label>
+                        <div>
+                            <input type="radio" id="payment-cash" name="payment_method" value="Cash on Delivery" checked>
+                            <label for="payment-cash">Cash on Delivery</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="payment-online" name="payment_method" value="Online Payment">
+                            <label for="payment-online">Online Payment</label>
+                        </div>
+                    </div>
+                    <div class="order-summary">
+                        <h3>Order Summary</h3>
+                        <div id="checkout-items">
+                            <!-- Order items will be displayed here -->
+                        </div>
+                        <div class="cart-total">
+                            <span>Subtotal:</span>
+                            <span id="checkout-subtotal">RM 0.00</span>
+                        </div>
+                        <div class="cart-total">
+                            <span>Delivery Fee:</span>
+                            <span id="checkout-delivery-fee">RM 5.00</span>
+                        </div>
+                        <div class="cart-total">
+                            <span>Total:</span>
+                            <span id="checkout-total">RM 0.00</span>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-block">Place Order</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Order Details Modal -->
+        <div id="order-details-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Order Details</h2>
+                <div id="order-details-content">
+                    <!-- Order details will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating View Cart Button -->
+    <button id="view-cart-btn" class="btn btn-float">View Cart (<span id="float-cart-count">0</span>)</button>
+
+    <script src="js/auth.js"></script>
+    <script src="js/customer.js"></script>
+</body>
+</html>
