@@ -6,7 +6,7 @@ define('DB_PASSWORD', '');        // Default XAMPP password is empty
 define('DB_NAME', 'restaurant_db'); // <<<<< IMPORTANT: Change this if your database name is different
 
 
-define('SENDGRID_API_KEY', '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');   // starts with SG.
+define('SENDGRID_API_KEY', '');   // starts with SG.
 define('SITE_FROM_EMAIL',  'b032310760@student.utem.edu.my');      // verified single sender
 define('SITE_FROM_NAME',   'InfoNexus Group');
 
